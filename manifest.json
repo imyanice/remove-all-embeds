@@ -1,11 +1,11 @@
 {
-   "name": "SilentTyping",
+   "name": "RemoveAllEmbeds",
    "version": "1.0.0",
-   "description": "Silences your typing indicator.",
+   "description": "Remove all embeds from a message",
    "authors": [
       {
-         "name": "eternal",
-         "id": "263689920210534400"
+         "name": "Yan.",
+         "id": "735538297815957584"
       }
    ]
 }
