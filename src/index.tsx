@@ -9,12 +9,11 @@ import Settings from './components/Settings';
 const Typing = getByProps('startTyping');
 const Patcher = create('silent-typing');
 
-const SilentTyping: Plugin = {
+const RemoveAllEmbeds: Plugin = {
    ...manifest,
 
    onStart() {
-      Patcher.instead(Typing, 'startTyping', () => { });
-      Patcher.instead(Typing, 'stopTyping', () => { });
+
    },
 
    onStop() {
@@ -26,4 +25,4 @@ const SilentTyping: Plugin = {
    }
 };
 
-registerPlugin(SilentTyping);
+registerPlugin(RemoveAllEmbeds);
