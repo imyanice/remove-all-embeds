@@ -1,28 +1,30 @@
-import { Plugin, registerPlugin } from 'enmity/managers/plugins';
-import { React } from 'enmity/metro/common';
-import { getByProps } from 'enmity/metro';
-import { create } from 'enmity/patcher';
-import manifest from '../manifest.json';
+import { Plugin, registerPlugin } from "enmity/managers/plugins";
+import { React } from "enmity/metro/common";
+import { getByProps } from "enmity/metro";
+import { create } from "enmity/patcher";
+import manifest from "../manifest.json";
 
-import Settings from './components/Settings';
+import Settings from "./components/Settings";
+import removeAllEmbeds from "./components/RemoveAllEmbeds";
 
-const Typing = getByProps('startTyping');
-const Patcher = create('silent-typing');
+const Typing = getByProps("startTyping");
+const Patcher = create("silent-typing");
 
 const RemoveAllEmbeds: Plugin = {
-   ...manifest,
+  ...manifest,
+  commands: [],
 
-   onStart() {
+  onStart() {
+    this.commands = [removeAllEmbeds];
+  },
 
-   },
+  onStop() {
+    this.commands = [];
+  },
 
-   onStop() {
-      Patcher.unpatchAll();
-   },
-
-   getSettingsPanel({ settings }) {
-      return <Settings settings={settings} />;
-   }
+  getSettingsPanel({ settings }) {
+    return <Settings settings={settings} />;
+  },
 };
 
 registerPlugin(RemoveAllEmbeds);

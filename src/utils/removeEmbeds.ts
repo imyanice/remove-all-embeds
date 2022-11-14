@@ -1,18 +1,19 @@
-import { Token } from "@metro/common";
-
+import { Toasts, Token } from "enmity/metro/common";
+import { getIDByName } from "enmity/api/assets";
 /**
  * @description Remove all message's embeds from a chann, server, mesage ID
  * @param channelID string The channel ID where the message is located
  * @param messageID string The message ID
  * @param serverID string The server ID where the message is located
+ * @returns string
  */
 
 export default async function removeEmbeds(
   channelID: string,
-  messageID,
+  messageID: string,
   serverID: string
 ) {
-  const ftech = fetch(
+  fetch(
     `https://discord.com/api/v9/channels/${channelID}/messages/${messageID}`,
     {
       headers: {
@@ -27,5 +28,18 @@ export default async function removeEmbeds(
       mode: "cors",
       credentials: "include",
     }
-  );
+  ).then((res) => {
+    if (res.status === 200) {
+      Toasts.open({
+        content: "Embeds succesfully removed!",
+        source: getIDByName("ic_trash_24px"),
+      });
+    } else {
+      Toasts.open({
+        content: "Something went wrong, try again layer...",
+        source: getIDByName("ic_alert"),
+      });
+      console.log(res);
+    }
+  });
 }
