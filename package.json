@@ -1,9 +1,9 @@
 {
-   "name": "plugin-template",
-   "description": "Template for enmity plugins.",
+   "name": "remove-all-embeds",
+   "description": "Remove all embeds from a message, an enmity plugin.",
    "version": "1.0.0",
    "license": "GPL-3.0",
-   "author": "Zoey & eternal",
+   "author": "Yan",
    "scripts": {
       "build": "rollup -c --configPlugin esbuild"
    },
