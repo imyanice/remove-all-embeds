@@ -104,7 +104,7 @@ export default () => {
             }
           >
             <Text style={[styles.main_text, styles.sub_header]}>
-              A project by
+              A plugin by
             </Text>
             <TouchableOpacity
               onPress={() => {
@@ -124,6 +124,21 @@ export default () => {
                 {authors[0].name}
               </Text>
             </TouchableOpacity>
+            <Text style={[styles.main_text, styles.sub_header]}>
+              with code from
+            </Text>
+              <Text
+                style={[
+                  styles.main_text,
+                  styles.sub_header,
+                  {
+                    paddingLeft: 4,
+                    fontFamily: Constants.Fonts.DISPLAY_BOLD,
+                  },
+                ]}
+              >
+                acquite & tenzin
+              </Text>
           </View>
           <View>
             <TouchableOpacity
