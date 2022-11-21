@@ -60,7 +60,7 @@ const RemoveAllEmbeds: Plugin = {
                   const finalLocation =
                     res?.props?.children?.props?.children?.props?.children[1];
 
-                  if (finalLocation[0].key == "1337") {
+                  if (finalLocation[0].key == "151") { // Price for an Apple action at 11:30 am (21/11/2022)
                     return;
                   }
                   const originalMessage = MessageStore.getMessage(
@@ -74,7 +74,7 @@ const RemoveAllEmbeds: Plugin = {
 
                   const formElem = (
                     <FormRow
-                      key={`1337`}
+                      key={`151`}
                       label={`Remove All Embeds`}
                       leading={
                         <FormRow.Icon source={getIDByName("ic_trash_24px")} />
