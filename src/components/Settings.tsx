@@ -4,39 +4,15 @@
 // - Credits -
 import { FormRow, ScrollView } from "enmity/components";
 import { SettingsStore } from "enmity/api/settings";
-import { getIDByName } from "enmity/api/assets";
-import {
-  React,
-  Toasts,
-  Constants,
-  StyleSheet,
-  Navigation,
-} from "enmity/metro/common";
-import { name, version, release } from "../../manifest.json";
-import { bulk, filters } from "enmity/metro";
+import { React, Navigation } from "enmity/metro/common";
+import { version, release } from "../../manifest.json";
 import Credits from "./Credits";
 
 interface SettingsProps {
   settings: SettingsStore;
 }
 
-const [Router, Clipboard] = bulk(
-  filters.byProps("transitionToGuild"),
-  filters.byProps("setString")
-);
-
 export default ({ settings }: SettingsProps) => {
-  const toastTrail = getIDByName("ic_selection_checked_24px");
-
-  const styles = StyleSheet.createThemedStyleSheet({
-    icon: {
-      color: Constants.ThemeColorMap.INTERACTIVE_NORMAL,
-    },
-    item: {
-      color: Constants.ThemeColorMap.TEXT_MUTED,
-    },
-  });
-
   const [touchX, setTouchX] = React.useState();
   const [touchY, setTouchY] = React.useState();
 

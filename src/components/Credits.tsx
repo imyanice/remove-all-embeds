@@ -10,10 +10,7 @@ import { TouchableOpacity, View, Image, Text } from "enmity/components";
 // @ts-ignore
 const Animated = window.enmity.modules.common.Components.General.Animated;
 
-const [Router, Clipboard] = bulk(
-  filters.byProps("transitionToGuild"),
-  filters.byProps("setString")
-);
+const [Router] = bulk(filters.byProps("transitionToGuild"));
 
 export default () => {
   const styles = StyleSheet.createThemedStyleSheet({
@@ -124,7 +121,7 @@ export default () => {
                   },
                 ]}
               >
-                {authors[0].name} & {authors[1].name}
+                {authors[0].name}
               </Text>
             </TouchableOpacity>
           </View>
