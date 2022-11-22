@@ -125,7 +125,7 @@ export default () => {
               </Text>
             </TouchableOpacity>
             <Text style={[styles.main_text, styles.sub_header]}>
-              with code from
+               with code from
             </Text>
               <Text
                 style={[
@@ -137,7 +137,7 @@ export default () => {
                   },
                 ]}
               >
-                acquite & tenzin
+                acquite
               </Text>
           </View>
           <View>
